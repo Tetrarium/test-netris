@@ -1,30 +1,12 @@
-# React + TypeScript + Vite
+# Тестовое задание NETRIS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Deploy static content to Pages](https://github.com/Tetrarium/test-netris/actions/workflows/jekyll-gh-pages.yml/badge.svg)](https://github.com/Tetrarium/test-netris/actions/workflows/jekyll-gh-pages.yml)
 
-Currently, two official plugins are available:
+### Опубликован по адресу: [https://tetrarium.github.io/test-netris/](https://tetrarium.github.io/test-netris/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Установка
+1. Клонируйте репозитарий на локальную машину `git clone git@github.com:Tetrarium/test-netris.git`.
+2. Перейдите в дирректорию проекта `cd test-netris`.
+3. Установите зависимости `npm install`.
+4. Запустите сервер `npm run dev`.
+5. Приложение доступно в браузере по адресу `http://localhost:3000`.
