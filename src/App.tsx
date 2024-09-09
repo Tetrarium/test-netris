@@ -1,13 +1,12 @@
-import useFetch from "./hooks/useFetch";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import { VIDEO_URL } from "./consts";
 
 function App() {
-  const { data, isLoading, error } = useFetch('https://5025y.wiremockapi.cloud/json/1');
-  console.log(data);
-  console.log(isLoading);
-  console.log(error);
   return (
     <>
-      App
+      <VideoPlayer src={VIDEO_URL} width={640} height={360}>
+        Overlay
+      </VideoPlayer>
     </>
   );
 }
