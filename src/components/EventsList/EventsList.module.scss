@@ -1,0 +1,22 @@
+.container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-height: 100%;
+  pointer-events: none;
+  display: flex;
+  height: 100%;
+  overflow-y: hidden;
+  align-items: flex-start;
+}
+
+.list {
+  height: 100%;
+  list-style: none;
+  pointer-events: all;
+  overflow-y: auto;
+}
+
+.btn_open {
+  pointer-events: all;
+}
