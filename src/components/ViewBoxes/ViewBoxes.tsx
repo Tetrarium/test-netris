@@ -2,19 +2,21 @@ import { useRef } from "react";
 
 import { useFrames } from "@/hooks/useFrames";
 
+import { useEventContext } from "../Events/EventsProvider";
 import { useVideoPlayerRef } from "../VideoPlayer/VideoPlayer";
 import style from "./ViewBoxes.module.scss";
 
 export default function ViewBoxes() {
   const videoRef = useVideoPlayerRef();
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const events = useEventContext();
 
   useFrames(() => {
     const { current: video } = videoRef;
     const { current: canvas } = canvasRef;
     const ctx = canvas?.getContext('2d');
 
-    if (!video || !canvas || !ctx) {
+    if (!video || !canvas || !ctx || !events) {
       return;
     }
 
@@ -31,11 +33,15 @@ export default function ViewBoxes() {
 
     ctx.fillStyle = '#0f0';
 
-    ctx.fillRect(0, 0, canvas.width / 2, canvas.height / 2);
 
     const currentTime = video.currentTime ?? 0;
 
-    // console.log(currentTime);
+    for (let i = 0; i < events.length; i++) {
+      const { timestamp, duration, zone } = events[i];
+      if (currentTime >= timestamp && currentTime <= (timestamp + duration)) {
+        ctx.fillRect(zone.left, zone.top, zone.width, zone.height);
+      }
+    }
   });
 
 
