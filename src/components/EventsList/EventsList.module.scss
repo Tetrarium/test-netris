@@ -1,6 +1,8 @@
+$width-list: 100px;
+
 .container {
   position: absolute;
-  right: 0;
+  right: -$width-list;
   top: 0;
   max-height: 100%;
   pointer-events: none;
@@ -10,13 +12,29 @@
   align-items: flex-start;
 }
 
+.btn_open {
+  pointer-events: all;
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  color: white;
+}
+
 .list {
+  width: $width-list;
   height: 100%;
   list-style: none;
   pointer-events: all;
   overflow-y: auto;
 }
 
-.btn_open {
-  pointer-events: all;
+.event_item {
+  width: 100%;
+}
+
+.event_btn {
+  width: 100%;
 }

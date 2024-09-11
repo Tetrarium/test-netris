@@ -33,12 +33,12 @@ export default function ViewBoxes() {
 
     ctx.fillStyle = '#0f0';
 
-
     const currentTime = video.currentTime ?? 0;
 
     for (let i = 0; i < events.length; i++) {
       const { timestamp, duration, zone } = events[i];
-      if (currentTime >= timestamp && currentTime <= (timestamp + duration)) {
+      const startTime = Math.floor(timestamp * 1000) / 1000;
+      if (currentTime >= startTime && currentTime <= (startTime + duration)) {
         ctx.fillRect(zone.left, zone.top, zone.width, zone.height);
       }
     }
