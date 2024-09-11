@@ -2,33 +2,57 @@ $width-list: 100px;
 
 .container {
   position: absolute;
-  right: -$width-list;
   top: 0;
+  left: 0;
   max-height: 100%;
   pointer-events: none;
   display: flex;
   height: 100%;
-  overflow-y: hidden;
+  width: 100%;
+  overflow: hidden;
   align-items: flex-start;
+}
+
+.container_blur {
+  pointer-events: all;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .btn_open {
   pointer-events: all;
   margin: 10px;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
   border-radius: 50%;
   border: none;
   background-color: rgba($color: #000000, $alpha: 0.2);
   color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.btn_hidden {
+  display: none;
 }
 
 .list {
+  position: absolute;
+  top: 0;
+  right: -$width-list;
   width: $width-list;
   height: 100%;
   list-style: none;
   pointer-events: all;
   overflow-y: auto;
+  transition: right 0.2s linear;
+}
+
+.list_opened {
+  right: 0;
 }
 
 .event_item {
@@ -37,4 +61,7 @@ $width-list: 100px;
 
 .event_btn {
   width: 100%;
+  background: rgba($color: #000000, $alpha: 0.3);
+  color: #fff;
+  font-size: 1em;
 }

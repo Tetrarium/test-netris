@@ -6,14 +6,14 @@ import { STATISTIC_URL, VIDEO_URL } from "./consts";
 
 function App() {
   return (
-    <>
+    <div className="page-container">
       <EventsContextProvider url={STATISTIC_URL}>
-        <VideoPlayer src={VIDEO_URL} width={640} height={360}>
+        <VideoPlayer src={VIDEO_URL}>
           <ViewBoxes />
           <EventsList />
         </VideoPlayer>
       </EventsContextProvider>
-    </>
+    </div>
   );
 }
 

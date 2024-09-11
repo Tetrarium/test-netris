@@ -22,14 +22,12 @@ export const useVideoPlayerRef = () => {
 
 export default function VideoPlayer({
   src,
-  width,
-  height,
   children,
 }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <div className={style.container} style={{ width, height }}>
+    <div className={style.container} >
       <video src={src} ref={videoRef} controls />
       <div className={style.overlay}>
         <VideoPlayerContext.Provider value={videoRef}>
